@@ -32,14 +32,19 @@ export function FormProvider({children}) {
     function handleSubmit(event) {
       event.preventDefault();
       // Save formData to context
-      if (cart.length > 0) {
+      if (cart.length > 0 && formData.nom && formData.adresse && formData.email) {
         setSubmitted(true);
         postDataToFirebase(cart, formData);
       } else {
-        alert("Le panier est vide, ajoutez des articles avant de soumettre le formulaire");
+        if(formData.nom && formData.adresse && formData.email)
+        {
+          alert("Le panier est vide, ajoutez des articles avant de soumettre le formulaire")
+        } else{
+        alert("Veuillez remplir entièrement le formulaire de contact");
+        }
       }
       //add formData to server or store in a database
-      setFormData({ name: '', email: '', address: '', comments: '' });
+      setFormData({ nom : '', email: '', address: '', comments: '' });
       
       
     }
