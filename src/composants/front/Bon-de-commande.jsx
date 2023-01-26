@@ -10,7 +10,7 @@ const Bondecommande = () => {
     const { formData, handleChange, handleSubmit, formDataCopy } = useContext(formContext);
 
     return ( <>
-    <h1 className="text-success">Bon de commande n°</h1>
+    <h1 className="text-success">Bon de commande n°1</h1>
     <p>Merci pour votre commande !</p>
     <table className="table table-striped">
         <thead>

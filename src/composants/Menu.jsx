@@ -29,15 +29,12 @@ function Menu() {
                             return isActive ? "nav-link active text-light" : "nav-link"
                         }}>Accueil</NavLink>
                     </li>
-                    <li className="nav-item">
+                </ul>
+                <ul className="navbar-nav ms-auto">    
+                    <li className="nav-item ">
                         <NavLink to="/panier" className={({isActive}) => {
                             return isActive ? "nav-link active text-light" : "nav-link"
                         }}>Panier</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink to="/bon-de-commande" className={({isActive}) => {
-                            return isActive ? "nav-link active text-light" : "nav-link"
-                        }}>Bon de Commande</NavLink>
                     </li>
                 </ul>
             </nav>
