@@ -1,6 +1,6 @@
 import axios from "axios";
 import {useRef} from "react"
-import { contactVerif } from "../verif/liste";
+import { commandeVerif } from "../verif/liste";
 import Alert from "../Alert";
 import { useAlert } from "../../hook/useAlert";
 import { useContext } from "react";
@@ -18,7 +18,7 @@ const Panier = () => {
     const { cart, removeFromCart } = useContext(authContext);
     const { formData, handleChange, handleSubmit, formDataCopy } = useContext(formContext);
 
-    const [alerte , setAlerte , getError] = useAlert(contactVerif)
+    const [alerte , setAlerte , getError] = useAlert(commandeVerif)
     const {submitted} = useContext(formContext)
 
     const navigate = useNavigate();
