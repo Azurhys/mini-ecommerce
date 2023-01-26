@@ -1,8 +1,15 @@
 import Joi from "joi";
 
-// super if 
-
-export const contactVerif = Joi.object({
+export const commandeVerif = Joi.object({
+    nom : Joi.string()
+               .min(1)
+               .max(20)
+               .regex(/^[^<>]*$/)
+               .required()
+               .messages({
+                    "string.min" : "le champ nom doit contenir au minimum 1 lettre",
+                    "string.max" : "le champ nom ne peut contenir au maximum que 20 lettres",
+               }),
     email : Joi.string()
                .min(4)
                .max(255)
@@ -11,6 +18,15 @@ export const contactVerif = Joi.object({
                .messages({
                     "string.min" : "le champ email doit contenir au minimum 4 lettres",
                     "string.email" : "le format de l'email n'est pas valide"
+               }),
+    adresse : Joi.string()
+               .min(4)
+               .max(255)
+               .regex(/^[^<>]*$/)
+               .required()
+               .messages({
+                    "string.min" : "le champ adresse doit contenir au minimum 4 lettres",
+                    "string.pattern.base" : "le champ message ne peut pas contenir les caractères suivants : < >"
                }),
     message : Joi.string()
                   .min(4)
@@ -21,6 +37,4 @@ export const contactVerif = Joi.object({
                     "string.pattern.base" : "le champ message ne peut pas contenir les caractères suivants : < >"
                   })
 })
-
-
 
